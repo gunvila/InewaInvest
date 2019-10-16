@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MyProjectTermInewsInvest</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Login">login</string>
+    <string name="user">user</string>
+    <string name="username">username</string>
+    <string name="inewivest">InewsIvest</string>
+    <string name="InewsInvest">InewsInvest</string>
+    <string name="targetinvest">เป้าหมายการลงทุน</string>
+    <string name="cryptocurrency">Cryptocurrency</string>
+    <string name="Stock">หุ้นที่น่าสนใจ</string>
+    <string name="exchage">แปลงค่าเงิน</string>
+    <string name="target">กำหนดการลงทุน</string>
+    <string name="presentvalue" />
+    <string name="PresentValue">Present Value</string>
+    <string name="payment">Payment</string>
+    <string name="exchange">แปลงค่าเงิน</string>
+    <string name="cal">Cal</string>
+    <string name="currency">Currency</string>
+    <string name="result">Result</string>
+</resources>

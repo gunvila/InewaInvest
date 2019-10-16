@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/loginmain">
+
+    <fragment
+        android:id="@+id/loginmain"
+        android:name="buu.informatics.s59161125.myprojectterminewsinvest.Loginmain"
+        android:label="fragment_loginmain"
+        tools:layout="@layout/fragment_loginmain" >
+        <action
+            android:id="@+id/action_loginmain_to_mainmenu"
+            app:destination="@+id/mainmenu" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainmenu"
+        android:name="buu.informatics.s59161125.myprojectterminewsinvest.Mainmenu"
+        android:label="fragment_mainmenu"
+        tools:layout="@layout/fragment_mainmenu" >
+        <action
+            android:id="@+id/action_mainmenu_to_tagetinvest"
+            app:destination="@id/tagetinvest" />
+        <action
+            android:id="@+id/action_mainmenu_to_exchange"
+            app:destination="@id/exchange" />
+    </fragment>
+    <fragment
+        android:id="@+id/tagetinvest"
+        android:name="buu.informatics.s59161125.myprojectterminewsinvest.Tagetinvest"
+        android:label="fragment_tagetinvest"
+        tools:layout="@layout/fragment_tagetinvest" />
+    <fragment
+        android:id="@+id/exchange"
+        android:name="buu.informatics.s59161125.myprojectterminewsinvest.Exchange"
+        android:label="fragment_exchange"
+        tools:layout="@layout/fragment_exchange" />
+</navigation>
