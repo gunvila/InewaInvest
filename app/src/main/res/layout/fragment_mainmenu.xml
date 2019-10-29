@@ -75,4 +75,4 @@
             app:menu="@menu/navdrawer_menu" />-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</layoutG
+</layout>
