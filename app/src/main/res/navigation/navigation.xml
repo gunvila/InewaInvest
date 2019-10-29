@@ -36,4 +36,8 @@
         android:name="buu.informatics.s59161125.myprojectterminewsinvest.Exchange"
         android:label="fragment_exchange"
         tools:layout="@layout/fragment_exchange" />
+    <fragment
+        android:id="@+id/abotme"
+        android:name="buu.informatics.s59161125.myprojectterminewsinvest.abotme"
+        android:label="abotme" />
 </navigation>

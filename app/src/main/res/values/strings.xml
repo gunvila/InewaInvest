@@ -20,4 +20,6 @@
     <string name="cal">Cal</string>
     <string name="currency">Currency</string>
     <string name="result">Result</string>
+    <string name="abot">abot</string>
+    <string name="Aboutme">Aboutme</string>
 </resources>
