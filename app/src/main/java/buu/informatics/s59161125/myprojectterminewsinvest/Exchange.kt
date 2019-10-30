@@ -43,7 +43,7 @@ class Exchange : Fragment() {
         exchangeone = binding.Listcurrencyone as Spinner
         exchangetwo = binding.Listcurencytwo as Spinner
 
-        val exchangeones = arrayOf("USD","EUR","JPY","AUD","CNY","THB")
+        val exchangeones = arrayOf("USD","EUR","JPY","AUD","CNY","THB","CAD")
         val exchangetwos = arrayOf("JPY", "THB")
 
         var adapter = activity?.applicationContext?.let {
