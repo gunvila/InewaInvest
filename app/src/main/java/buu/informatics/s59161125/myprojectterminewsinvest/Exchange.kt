@@ -43,7 +43,7 @@ class Exchange : Fragment() {
         exchangeone = binding.Listcurrencyone as Spinner
         exchangetwo = binding.Listcurencytwo as Spinner
 
-        val exchangeones = arrayOf("THB", "USD")
+        val exchangeones = arrayOf("USD","EUR","JPY","AUD","CNY","THB")
         val exchangetwos = arrayOf("JPY", "THB")
 
         var adapter = activity?.applicationContext?.let {
@@ -52,6 +52,7 @@ class Exchange : Fragment() {
                 android.R.layout.simple_spinner_item,
                 exchangeones
             )
+
         }
         adapter?.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
         binding.Listcurrencyone.adapter = adapter
