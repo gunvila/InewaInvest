@@ -11,7 +11,7 @@
             android:id="@+id/InewsInvest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="140dp"
             android:fontFamily="@font/prompt_medium"
             android:hint="@string/Login"
             android:text="@string/Login"
@@ -25,19 +25,18 @@
             android:id="@+id/use"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="50dp"
             android:ems="10"
             android:fontFamily="@font/prompt_medium"
             android:hint="@string/username"
             android:inputType="textPersonName"
-            android:text="@string/username"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/InewsInvest" />
 
         <EditText
             android:id="@+id/pass"
-            android:layout_width="213dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:fontFamily="@font/prompt_medium"
@@ -59,9 +58,9 @@
 
         <Button
             android:id="@+id/can"
-            android:layout_width="88dp"
+            android:layout_width="125dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="50dp"
             android:fontFamily="@font/prompt_medium"
             android:text="@android:string/cancel"
             app:layout_constraintEnd_toEndOf="parent"

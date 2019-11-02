@@ -1,7 +1,5 @@
 package buu.informatics.s59161125.myprojectterminewsinvest
 
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -9,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import buu.informatics.s59161125.myprojectterminewsinvest.databinding.FragmentLoginmainBinding
@@ -38,22 +37,27 @@ class Loginmain : Fragment() {
         )
 
         binding.submit.setOnClickListener { view: View ->
-
             var user = use.text.toString()
             var pass = pass.text.toString()
             if (user == "admin" && pass == "12345678") {
                 Log.d("true", "12345")
                 view.findNavController()
-                    .navigate(R.id.action_loginmain_to_mainmenu)
+                    .navigate(LoginmainDirections.actionLoginmainToMainmenu("pass"))
+                (activity as AppCompatActivity).supportActionBar?.show()
             } else {
                 Toast.makeText(
                     getActivity(), "รหัสผ่านผิดกรุณา ล็อคอินใหม่",
                     Toast.LENGTH_LONG
-                ).show();
+                ).show()
             }
 
         }
         return binding.root
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        (activity as AppCompatActivity).supportActionBar?.hide()
     }
 
 

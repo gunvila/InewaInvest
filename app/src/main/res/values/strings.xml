@@ -22,4 +22,30 @@
     <string name="result">Result</string>
     <string name="abot">abot</string>
     <string name="Aboutme">Aboutme</string>
+    <string name="txtValueTo">to</string>
+    <string name="btnBuyValue">ซื้อ</string>
+    <string name="btnSellValue">ขาย</string>
+    <string name="txtCryptoValue">BTC</string>
+    <string name="txtCryptoNameValue">BTC</string>
+    <string name="btcValue">Bitcoin ถูกสร้างขึ้นในปี 2009 โดย Satoshi Nakamoto บุคคลลึกลับที่ไม่ยอมเปิดเผยตัวตน Bitcoin เป็นหน่วยเงินใช้ชื่อย่อสกุลเงินว่า BTC ซึ่งใช้เครือข่ายบล็อกเชนแบบเปิดในการจัดเก็บข้อมูล ทําให้ไม่มีใครสามารถควบคุมหรือแก้ไขข้อมูลที่บันทึกอยู่บน blockchain ได้</string>
+    <string name="ethValue">
+        Ethereum เป็นชื่อของบล็อกเชนหนึ่งซึ่งมีเหรียญหรือ cryptocurrency ชื่อ Ether (ชื่อย่อสกุลเงิน: ETH) ถูกสร้างในปี 2013 โดย Vitalik Buterin โปรแกรมเมอร์หนุ่ม ชาวรัสเซีย เขาเล็งเห็นศักยภาพของ crypto และ blockchain ที่มากว่าแค่เป็นสกุลเงินดิจิตัล โดย ETH จะเป็นเหมือน general purpose blockchain หรือ blockchain เอนกประสงค์ที่ทำได้หลายอย่างที่บล็อกเชนสามารถทำได้ เช่น Smart Contracts และข้อตกลงทางการเงินเป็นต้น
+    </string>
+    <string name="xrpValue">
+        Ripple ถูกสร้างขึ้นในปี 2012 โดยบริษัท Ripple Labs ที่มี Chris Larsen เป็นผู้ถือหุ้นใหญ่ สกุลเงินของ Ripple ใช้ชื่อย่อว่า XRP ที่มีไว้ใช้สําหรับการชำระเงินหรือโอนเงินระหว่างสถาบันการเงินและธนาคารทั่วโลก แพลตฟอร์มของ Ripple จะแตกต่างจากสกุลเงินตัวอื่นๆ เพราะ XRP ใช้เครือข่าย RippleNet ซึ่งเป็นระบบปิดที่ให้ใช้งานเฉพาะธนาคารที่ลงทะเบียนกับ Ripple เท่านั้น และการยืนยันธุรกรรมทั้งหมดนั้น จะถูกควบคุมโดยบริษัท Ripple แต่เพียงผู้เดียว
+    </string>
+    <string name="bchValue">
+        Bitcoin Cash (ชื่อย่อสกุลเงิน: BCH) คือสกุลเงินที่กำเนิดจากการแยกออกของตัวเหรียญ Bitcoin หรือการทำ Hard Fork นั่นเอง ซึ่งหมายความว่าเครือข่าย Blockchain ของ Bitcoin จะถูกแบ่งออกเป็นสองส่วน ส่วนหนึ่งเป็นของ BTC และอีกส่วนเป็นของ BCH การเกิดขึ้นของ Bitcoin Cash เป็นเพราะว่า Bitcoin (BTC) นั้นรองรับได้แค่ 100 ธุรกรรมต่อบล็อก หรือ 1MB ซึ่งถือว่าช้าและมีปริมาณธุรกรรมที่รอการตรวจสอบเป็นจำนวนมาก จึงเกิดการโต้แย้งขึ้นระหว่างนักพัฒนาของทั้งสองกลุ่ม สุดท้ายแล้วกลุ่มที่ไม่เห็นด้วยกับปัญหาการ Scaling ของ BTC จำเป็นต้องแยกออกมาเป็นอีกเหรียญ นั่นก็คือ BCH
+    </string>
+    <string name="eosValue">
+        EOS เป็นอีกสกุลเงินดิจิทัลที่มีความสามารถในการสร้างแอพพลิเคชันแบบกระจาย (Decentralized Application)โดยใช้ Smart Contracts ในการกําหนดเงื่อนไขต่างๆ เทคโนโลยีที่ EOS ใช้จะคล้ายๆกับของ Ethereum แต่ EOS สามารถทําธุรกรรมได้มากกว่า 1 แสนต่อวินาที เมื่อเทียบกับ ETH ที่ทำได้แค่ 13 ธุรกรรมต่อวินาที และที่สําคัญคือ EOS นั้นไม่มีค่าธรรมเนียมหรือค่า Gas เหมือน ETH
+    </string>
+    <string name="btnInsertValue">เพิ่มหุ้นที่คุณสนใจ</string>
+    <string name="txtInsertNameValue">ชื่อหุ้น</string>
+    <string name="txtInsertNameThaiValue">ชื่อหุ้น(ภาษาไทย)</string>
+    <string name="txtInsertBasicValue">ข้อมูลพื้นฐาน</string>
+    <string name="btnSaveValue">Save</string>
+    <string name="txtStockNameDetailValue">PTT</string>
+    <string name="txtStockNameThaiDetailValue">บริษัท ปตท. จำกัด</string>
+    <string name="txtStockDetail">testttttt</string>
 </resources>

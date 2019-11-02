@@ -3,41 +3,107 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/loginmain">
+    app:startDestination="@id/mainmenu">
 
     <fragment
         android:id="@+id/loginmain"
         android:name="buu.informatics.s59161125.myprojectterminewsinvest.Loginmain"
-        android:label="fragment_loginmain"
-        tools:layout="@layout/fragment_loginmain" >
+        android:label="Login"
+        tools:layout="@layout/fragment_loginmain">
         <action
             android:id="@+id/action_loginmain_to_mainmenu"
             app:destination="@+id/mainmenu" />
+        <action
+            android:id="@+id/action_mainmenu_to_loginmain2"
+            app:destination="@id/mainmenu"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/mainmenu"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/mainmenu"
         android:name="buu.informatics.s59161125.myprojectterminewsinvest.Mainmenu"
-        android:label="fragment_mainmenu"
-        tools:layout="@layout/fragment_mainmenu" >
-        <action
-            android:id="@+id/action_mainmenu_to_tagetinvest"
-            app:destination="@id/tagetinvest" />
+        android:label="Main"
+        tools:layout="@layout/fragment_mainmenu">
+        <argument
+            android:name="pageSend"
+            app:argType="string" />
         <action
             android:id="@+id/action_mainmenu_to_exchange"
             app:destination="@id/exchange" />
+        <action
+            android:id="@+id/action_mainmenu_to_loginmain2"
+            app:destination="@id/loginmain"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/loginmain"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_mainmenu_to_cyptocurrencyFragment"
+            app:destination="@id/cyptocurrencyFragment" />
+        <action
+            android:id="@+id/action_mainmenu_to_stockFragment"
+            app:destination="@id/stockFragment" />
+
     </fragment>
-    <fragment
-        android:id="@+id/tagetinvest"
-        android:name="buu.informatics.s59161125.myprojectterminewsinvest.Tagetinvest"
-        android:label="fragment_tagetinvest"
-        tools:layout="@layout/fragment_tagetinvest" />
     <fragment
         android:id="@+id/exchange"
         android:name="buu.informatics.s59161125.myprojectterminewsinvest.Exchange"
-        android:label="fragment_exchange"
+        android:label="Exchange"
         tools:layout="@layout/fragment_exchange" />
     <fragment
         android:id="@+id/abotme"
         android:name="buu.informatics.s59161125.myprojectterminewsinvest.abotme"
-        android:label="abotme" />
+        android:label="Aboutme" />
+    <fragment
+        android:id="@+id/cyptocurrencyFragment"
+        android:name="buu.informatics.s59161125.myprojectterminewsinvest.CryptocurrencyFragment"
+        android:label="Crytocurrency"
+        tools:layout="@layout/fragment_cryptocurrency" >
+        <action
+            android:id="@+id/action_cyptocurrencyFragment_to_cryptoDetailFragment"
+            app:destination="@id/cryptoDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cryptoDetailFragment"
+        android:name="buu.informatics.s59161125.myprojectterminewsinvest.CryptoDetailFragment"
+        android:label="CryptocurrencyDetail"
+        tools:layout="@layout/fragment_crypto_detail">
+        <argument
+            android:name="crypto"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/stockFragment"
+        android:name="buu.informatics.s59161125.myprojectterminewsinvest.StockFragment"
+        android:label="Stock"
+        tools:layout="@layout/fragment_stock">
+        <action
+            android:id="@+id/action_stockFragment_to_insertStockFragment"
+            app:destination="@id/insertStockFragment" />
+        <action
+            android:id="@+id/action_stockFragment_to_stockDetailFragment"
+            app:destination="@id/stockDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/insertStockFragment"
+        android:name="buu.informatics.s59161125.myprojectterminewsinvest.InsertStockFragment"
+        android:label="InsertStock"
+        tools:layout="@layout/fragment_insert_stock">
+        <action
+            android:id="@+id/action_insertStockFragment_to_stockFragment"
+            app:destination="@id/stockFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/stockFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/stockDetailFragment"
+        android:name="buu.informatics.s59161125.myprojectterminewsinvest.StockDetailFragment"
+        android:label="StockDetail"
+        tools:layout="@layout/fragment_stock_detail" >
+        <argument
+            android:name="detail"
+            app:argType="string" />
+    </fragment>
 </navigation>

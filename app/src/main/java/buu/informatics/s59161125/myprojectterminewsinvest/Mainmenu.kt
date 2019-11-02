@@ -3,6 +3,7 @@ package buu.informatics.s59161125.myprojectterminewsinvest
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -32,48 +33,52 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class Mainmenu : Fragment() {
-    //private lateinit var drawerLayout: DrawerLayout
+    private lateinit var drawerLayout: DrawerLayout
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+        savedInstanceState: Bundle?
+    ): View? {
 
         val binding = DataBindingUtil.inflate<FragmentMainmenuBinding>(
             inflater, R.layout.fragment_mainmenu, container, false
         )
 
+        showLogin()
 
-        setHasOptionsMenu(true)
-
-       binding.btn1.setOnClickListener {
-           findNavController().navigate(R.id.action_mainmenu_to_tagetinvest)
-
-
-
-       }
-/*       binding.btn2.setOnClickListener {
-           findNavController().navigate()
-       } */
-
-        binding.btn4.setOnClickListener {
-            findNavController().navigate(R.id.action_mainmenu_to_exchange)
-
+        binding.btn2.setOnClickListener {
+            findNavController().navigate(MainmenuDirections.actionMainmenuToCyptocurrencyFragment())
         }
-
-
-
-
+        binding.btn3.setOnClickListener {
+            findNavController().navigate(MainmenuDirections.actionMainmenuToStockFragment())
+        }
+        binding.btn4.setOnClickListener {
+            findNavController().navigate(MainmenuDirections.actionMainmenuToExchange())
+        }
+        setHasOptionsMenu(true)
         return binding.root
     }
-
+    private fun showLogin(){
+        var loginPage = arguments?.getString("pageSend")
+        if(loginPage.isNullOrEmpty()) {
+            Handler().postDelayed(
+                {
+                    findNavController().navigate(MainmenuDirections.actionMainmenuToLoginmain2())
+                }, 200
+            )
+        }
+    }
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater?.inflate(R.menu.options_menu, menu)
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item!!,
-            view!!.findNavController())
+        return NavigationUI.onNavDestinationSelected(
+            item!!,
+            view!!.findNavController()
+        )
                 || super.onOptionsItemSelected(item)
     }
 

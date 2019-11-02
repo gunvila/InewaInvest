@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:context=".InsertStockFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txtInsertName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="49dp"
+            android:fontFamily="@font/prompt_medium"
+            android:text="@string/txtInsertNameValue"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtInsertNameThai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/prompt_medium"
+            android:text="@string/txtInsertNameThaiValue"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtInsertName" />
+
+        <TextView
+            android:id="@+id/txtInsertBasic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/prompt_medium"
+            android:text="@string/txtInsertBasicValue"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtInsertNameThai" />
+
+        <EditText
+            android:id="@+id/edtBasic"
+            android:layout_width="349dp"
+            android:layout_height="154dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="28dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtInsertBasic" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:fontFamily="@font/prompt_medium"
+            android:text="@string/btnSaveValue"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtBasic" />
+
+        <EditText
+            android:id="@+id/edtName"
+            android:layout_width="270dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="38dp"
+            android:layout_marginEnd="28dp"
+            android:ems="10"
+            android:fontFamily="@font/prompt_medium"
+            android:inputType="textPersonName"
+            app:layout_constraintBaseline_toBaselineOf="@+id/txtInsertName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtInsertName" />
+
+        <EditText
+            android:id="@+id/edtNameThai"
+            android:layout_width="215dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="28dp"
+            android:ems="10"
+            android:fontFamily="@font/prompt_medium"
+            android:inputType="textPersonName"
+            app:layout_constraintBaseline_toBaselineOf="@+id/txtInsertNameThai"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtInsertNameThai" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

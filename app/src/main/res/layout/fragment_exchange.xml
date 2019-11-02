@@ -13,7 +13,7 @@
             android:id="@+id/Headexchange"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="75dp"
+            android:layout_marginTop="50dp"
             android:fontFamily="@font/prompt_medium"
             android:text="@string/exchange"
             android:textSize="30sp"
@@ -34,10 +34,10 @@
 
         <Spinner
             android:id="@+id/Listcurrencyone"
-            android:layout_width="161dp"
-            android:layout_height="20dp"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="75dp"
+            android:layout_marginTop="62dp"
             app:layout_constraintEnd_toStartOf="@+id/currencyone"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,60 +45,52 @@
 
         <Spinner
             android:id="@+id/Listcurencytwo"
-            android:layout_width="161dp"
-            android:layout_height="20dp"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="70dp"
-            android:layout_marginBottom="45dp"
-            app:layout_constraintBottom_toTopOf="@+id/result"
-            app:layout_constraintEnd_toStartOf="@+id/currencytwo"
+            android:layout_marginTop="19dp"
+            app:layout_constraintEnd_toStartOf="@+id/txtResult"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Listcurrencyone" />
+            app:layout_constraintTop_toBottomOf="@+id/txtTo" />
 
         <EditText
             android:id="@+id/currencyone"
-            android:layout_width="173dp"
-            android:layout_height="41dp"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
             android:layout_marginTop="61dp"
             android:ems="10"
             android:fontFamily="@font/prompt_medium"
+            android:hint="@string/currency"
             android:inputType="textPersonName"
-            android:text="@string/currency"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/Listcurrencyone"
             app:layout_constraintTop_toBottomOf="@+id/Headexchange" />
 
-        <EditText
-            android:id="@+id/currencytwo"
-            android:layout_width="173dp"
-            android:layout_height="41dp"
-            android:layout_marginTop="42dp"
-            android:layout_marginBottom="45dp"
-            android:ems="10"
+        <TextView
+            android:id="@+id/txtResult"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="70dp"
             android:fontFamily="@font/prompt_medium"
-            android:inputType="textPersonName"
-            android:text="@string/currency"
-            app:layout_constraintBottom_toTopOf="@+id/result"
+            android:hint="@string/result"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/Listcurencytwo"
             app:layout_constraintTop_toBottomOf="@+id/currencyone" />
 
-        <EditText
-            android:id="@+id/result"
-            android:layout_width="173dp"
-            android:layout_height="41dp"
-            android:layout_marginBottom="104dp"
-            android:ems="10"
+        <TextView
+            android:id="@+id/txtTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="25dp"
             android:fontFamily="@font/prompt_medium"
-            android:inputType="textPersonName"
-            android:text="@string/result"
-            app:layout_constraintBottom_toTopOf="@+id/calbtn"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.462"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:text="@string/txtValueTo"
+            app:layout_constraintStart_toStartOf="@+id/Listcurencytwo"
+            app:layout_constraintTop_toBottomOf="@+id/Listcurrencyone" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
