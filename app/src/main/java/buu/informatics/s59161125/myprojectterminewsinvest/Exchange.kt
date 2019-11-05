@@ -1,6 +1,7 @@
 package buu.informatics.s59161125.myprojectterminewsinvest
 
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,7 +12,10 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import buu.informatics.s59161125.myprojectterminewsinvest.databinding.FragmentExchangeBinding
+import buu.informatics.s59161125.myprojectterminewsinvest.service.Rates
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -29,10 +33,15 @@ private const val ARG_PARAM2 = "param2"
  */
 class Exchange : Fragment() {
 
+    lateinit var arrayRate: ArrayList<coin>
     lateinit var exchangeone: Spinner
     lateinit var exchangetwo: Spinner
     var currencyValueOne = ""
-    var currencyValueTwo = ""
+    var currencyValueTwo: Double = 0.0
+
+    private val viewModel: ExchangeViewModel by lazy {
+        ViewModelProviders.of(this).get(ExchangeViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +51,7 @@ class Exchange : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentExchangeBinding>(
             inflater, R.layout.fragment_exchange, container, false
         )
+        arrayRate = setRate()
         exchangeone = binding.Listcurrencyone as Spinner
         exchangetwo = binding.Listcurencytwo as Spinner
 
@@ -55,21 +65,9 @@ class Exchange : Fragment() {
     private fun setCalculate(binding: FragmentExchangeBinding) {
         binding.calbtn.setOnClickListener {
             if (binding.currencyone.text.toString().matches("-?\\d+(\\.\\d+)?".toRegex())) {
-                if (currencyValueOne == "USD") {
-                    if (currencyValueTwo == "THB") {
-                        binding.txtResult.text =
-                            (binding.currencyone.text.toString().toDouble() * 30.25).toString()
-                    } else {
-                        binding.txtResult.text = binding.currencyone.text.toString()
-                    }
-                } else {
-                    if (currencyValueTwo == "USD") {
-                        binding.txtResult.text =
-                            (binding.currencyone.text.toString().toDouble() / 30.25).toString()
-                    } else {
-                        binding.txtResult.text = binding.currencyone.text.toString()
-                    }
-                }
+                binding.txtResult.text =
+                    String.format("%.2f",binding.currencyone.text.toString().toDouble() * currencyValueTwo)
+
             } else {
                 Toast.makeText(getActivity(), "กรอกเฉพาะตัวเลขเท่านั้น", Toast.LENGTH_LONG)
                     .show()
@@ -78,7 +76,7 @@ class Exchange : Fragment() {
     }
 
     private fun setSpinerOne(binding: FragmentExchangeBinding) {
-        val exchangeones = arrayOf("USD", "THB")
+        val exchangeones = arrayOf("THB")
 
         var adapter = activity?.applicationContext?.let {
             ArrayAdapter(
@@ -110,34 +108,54 @@ class Exchange : Fragment() {
             }
     }
 
+    private fun setRate(): ArrayList<coin> {
+        var arrayCoin: ArrayList<coin> = ArrayList()
+
+        viewModel.properties.observe(this, Observer {
+            currencyValueTwo = it.get(0).USD
+            arrayCoin.add(coin("USD", it.get(0).USD))
+            arrayCoin.add(coin("EUR", it.get(0).EUR))
+
+        })
+
+        return arrayCoin
+    }
+
     private fun setSpinerTwo(binding: FragmentExchangeBinding) {
-        val exchangetwos = arrayOf("THB", "USD")
+        val exchangetwo = arrayOf("USD", "EUR")
+
 
         var adapter = activity?.applicationContext?.let {
             ArrayAdapter(
                 it,
                 android.R.layout.simple_spinner_item,
-                exchangetwos
+                exchangetwo
             )
         }
         adapter?.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
         binding.Listcurencytwo.adapter = adapter
+        Handler().postDelayed({
 
-        binding.Listcurencytwo.onItemSelectedListener =
-            object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                    parent: AdapterView<*>,
-                    view: View,
-                    position: Int,
-                    id: Long
-                ) {
-                    currencyValueTwo = parent.getItemAtPosition(position).toString()
-                    Log.i("test", parent.getItemAtPosition(position).toString())
-                }
+            binding.Listcurencytwo.onItemSelectedListener =
+                object : AdapterView.OnItemSelectedListener {
+                    override fun onItemSelected(
+                        parent: AdapterView<*>,
+                        view: View,
+                        position: Int,
+                        id: Long
+                    ) {
+                        Log.i("test", "spinner ${parent.getItemAtPosition(position)}")
+                        Log.i("test", "array ${arrayRate.get(position).name}")
+                        if (parent.getItemAtPosition(position) == arrayRate.get(position).name) {
+                            Log.i("test", "===")
+                            currencyValueTwo = arrayRate.get(position).rate
+                        }
+                    }
 
-                override fun onNothingSelected(parent: AdapterView<*>) {
+                    override fun onNothingSelected(parent: AdapterView<*>) {
+                    }
                 }
-            }
+        }, 1000)
     }
 }
 
