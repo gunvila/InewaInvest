@@ -8,11 +8,9 @@ class StockControllerRepository(private val stockDAO: StockDatabaseDAO) {
 
     val stockAll: LiveData<List<StockDatabaseModel>> = stockDAO.getAllStock()
 
-    fun insert(stock: StockDatabaseModel) {
-        stockDAO.insert(stock)
-    }
+    fun insert(stock: StockDatabaseModel) = stockDAO.insert(stock)
 
-    fun delete(item: String){
-        stockDAO.delete(item)
-    }
+
+    fun delete(item: String) = stockDAO.delete(item)
+
 }
