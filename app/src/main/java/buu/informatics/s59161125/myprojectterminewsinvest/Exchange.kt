@@ -112,9 +112,16 @@ class Exchange : Fragment() {
         var arrayCoin: ArrayList<coin> = ArrayList()
 
         viewModel.properties.observe(this, Observer {
+            Log.i("test","${it.get(0).USD}")
+
             currencyValueTwo = it.get(0).USD
             arrayCoin.add(coin("USD", it.get(0).USD))
             arrayCoin.add(coin("EUR", it.get(0).EUR))
+            arrayCoin.add(coin("JPY", it.get(0).JPY))
+            arrayCoin.add(coin("CHF", it.get(0).CHF))
+            arrayCoin.add(coin("CNY", it.get(0).CNY))
+            arrayCoin.add(coin("GBP", it.get(0).GBP))
+            arrayCoin.add(coin("CAD", it.get(0).CAD))
 
         })
 
@@ -122,7 +129,7 @@ class Exchange : Fragment() {
     }
 
     private fun setSpinerTwo(binding: FragmentExchangeBinding) {
-        val exchangetwo = arrayOf("USD", "EUR")
+        val exchangetwo = arrayOf("USD", "EUR", "JPY", "CHF", "CNY", "GBP","CAD")
 
 
         var adapter = activity?.applicationContext?.let {
@@ -144,6 +151,7 @@ class Exchange : Fragment() {
                         position: Int,
                         id: Long
                     ) {
+                        binding.txtResult.text = ""
                         Log.i("test", "spinner ${parent.getItemAtPosition(position)}")
                         Log.i("test", "array ${arrayRate.get(position).name}")
                         if (parent.getItemAtPosition(position) == arrayRate.get(position).name) {
